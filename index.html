@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INPEC (ROL) — Registro de Arrestos</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Sitio ficticio para juego de rol inspirado en un registro penitenciario. No corresponde a datos reales." />
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <img src="logo.svg" alt="Emblema institucional RP" class="logo" />
+      <div class="titles">
+        <h1>INPEC <span class="tag">ROL</span></h1>
+        <p>Instituto Nacional Penitenciario y Carcelario — Simulación</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="principal">
+      <a href="#" aria-current="page">Inicio</a>
+      <a href="#lista">Lista de arrestos</a>
+      <a href="#buscar">Buscar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido" class="container" role="main">
+    <section class="notice" aria-label="Aviso de ficción">
+      <span class="badge">FICCIÓN • RP</span>
+      <p>Esta web es <strong>ficticia</strong> y forma parte de un <strong>juego de rol</strong>. Ningún dato corresponde a personas reales ni a procesos auténticos.</p>
+    </section>
+
+    <section id="buscar" class="filters" aria-labelledby="t-buscar">
+      <h2 id="t-buscar">Buscar y filtrar</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="q">Búsqueda</label>
+          <input id="q" type="search" placeholder="Nombre, delito, N.º de caso..." autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="estado">Estado</label>
+          <select id="estado">
+            <option value="">Todos</option>
+            <option>En juicio</option>
+            <option>Condenado</option>
+            <option>Libre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="centro">Centro</label>
+          <select id="centro">
+            <option value="">Todos</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="orden">Ordenar por</label>
+          <select id="orden">
+            <option value="fecha:desc">Fecha ↓</option>
+            <option value="fecha:asc">Fecha ↑</option>
+            <option value="caso:desc">N.º de caso ↓</option>
+            <option value="caso:asc">N.º de caso ↑</option>
+            <option value="nombre:asc">Nombre A–Z</option>
+            <option value="nombre:desc">Nombre Z–A</option>
+          </select>
+        </div>
+      </div>
+      <button id="reset" class="btn-reset" type="button">Restablecer filtros</button>
+    </section>
+
+    <section id="lista" aria-labelledby="t-lista">
+      <h2 id="t-lista">Lista de arrestos</h2>
+      <div class="table-wrap">
+        <table id="tabla" aria-describedby="t-lista">
+          <thead>
+            <tr>
+              <th data-key="caso">N.º de caso</th>
+              <th data-key="nombre">Nombre</th>
+              <th data-key="fecha">Fecha de arresto</th>
+              <th data-key="delito">Delito</th>
+              <th data-key="centro">Centro</th>
+              <th data-key="estado">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- filas generadas por script.js -->
+          </tbody>
+        </table>
+      </div>
+      <p id="contador" class="muted"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto" role="contentinfo">
+    <p><strong>INPEC (ROL)</strong> — Sistema de Gestión Penitenciaria simulado para entretenimiento y práctica educativa.</p>
+    <p class="small">Este sitio no está afiliado ni autorizado por el INPEC real. No usar datos personales reales.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

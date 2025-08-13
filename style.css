@@ -1,0 +1,152 @@
+/* Estilo institucional inspirado, NO oficial */
+:root{
+  --navy:#0c3a63;
+  --navy-2:#0f4a86;
+  --gold:#c7a63a;
+  --ink:#1f2937;
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --radius:16px;
+  --shadow:0 8px 24px rgba(3, 17, 38, .08);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+}
+
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;padding:8px 10px;border-radius:8px;box-shadow:var(--shadow)}
+
+.site-header{
+  background:linear-gradient(180deg, var(--navy), var(--navy-2));
+  color:#fff;
+  padding:16px 20px;
+  box-shadow:var(--shadow);
+  border-bottom:4px solid var(--gold);
+}
+.brand{display:flex;align-items:center;gap:12px;max-width:1200px;margin:0 auto}
+.logo{width:56px;height:56px}
+.titles h1{margin:0;font-size:1.7rem;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+.tag{font-size:.8rem;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:999px}
+.titles p{margin:2px 0 0;font-size:.95rem;opacity:.96}
+
+.nav{max-width:1200px;margin:8px auto 0;display:flex;gap:14px;flex-wrap:wrap}
+.nav a{color:#eaf2ff;text-decoration:none;padding:6px 10px;border-radius:10px}
+.nav a[aria-current="page"], .nav a:hover{background:rgba(255,255,255,.12)}
+
+.container{max-width:1200px;margin:22px auto;padding:0 16px}
+
+.notice{
+  background:var(--card);
+  padding:14px 16px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+  display:flex; gap:10px; align-items:center;
+}
+.badge{
+  background:var(--navy);
+  color:#fff;
+  font-weight:700;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+  border:1px solid rgba(255,255,255,.35);
+}
+
+.filters{
+  background:var(--card);
+  padding:16px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.filters .grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:12px;
+}
+.field{display:flex; flex-direction:column; gap:6px}
+.field input, .field select{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #d1d5db;
+  outline:none;
+  background:#fff;
+}
+.field input:focus, .field select:focus{border-color:var(--navy); box-shadow:0 0 0 3px rgba(15, 74, 134, .15)}
+
+.btn-reset{
+  margin-top:12px;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+.btn-reset:hover{filter:brightness(1.05)}
+
+.table-wrap{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:auto;
+}
+table{width:100%;border-collapse:collapse;min-width:780px}
+thead th{
+  position:sticky; top:0;
+  background:var(--navy);
+  color:#fff;
+  text-align:left;
+  padding:12px;
+  font-weight:700;
+  border-bottom:2px solid var(--gold);
+  user-select:none;
+}
+thead th.sortable{cursor:pointer}
+tbody td{
+  padding:12px;
+  border-top:1px solid #e5e7eb;
+}
+tbody tr:nth-child(odd){background:#fafafa}
+.state{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.8rem;
+  background:#eef2ff;
+  border:1px solid rgba(0,0,0,.05);
+}
+.state.en-juicio{background:#fff7ed}
+.state.condenado{background:#fee2e2}
+.state.libre{background:#dcfce7}
+.muted{color:var(--muted); margin:10px 4px}
+
+.site-footer{
+  margin-top:28px;
+  padding:22px 16px;
+  text-align:center;
+  color:#f0f6ff;
+  background:linear-gradient(180deg, var(--navy-2), var(--navy));
+  border-top:4px solid var(--gold);
+}
+.site-footer .small{opacity:.92; font-size:.9rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .filters .grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (max-width:520px){
+  .filters .grid{grid-template-columns: 1fr;}
+  .titles h1{font-size:1.35rem}
+  .titles p{font-size:.86rem}
+  .logo{width:48px;height:48px}
+}
